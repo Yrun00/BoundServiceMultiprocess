@@ -37,13 +37,11 @@ class MainActivity : ComponentActivity() {
 
     private val serviceConnection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-            Log.d("MainActivity", "Service connected")
             iSquareService = ISquareService.Stub.asInterface(service)
             isBound = true
         }
 
         override fun onServiceDisconnected(name: ComponentName?) {
-            Log.d("MainActivity", "Service disconnected")
             iSquareService = null
             isBound = false
         }
