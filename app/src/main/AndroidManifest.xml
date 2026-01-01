@@ -11,6 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BoundServiceMultiprocess">
+        <service
+            android:name=".BoundSquareService"
+            android:process=":square_process"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.boundservice.ISquareService" />
+            </intent-filter>
+        </service>
         <activity
             android:name=".MainActivity"
             android:exported="true"
